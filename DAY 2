@@ -1,0 +1,10 @@
+1. Difference between document and window objects:
+  Document: we use document file in HTML to view our web page. elements and tags are supported to build the HTML. we always initiate with doument object DOM.
+  syntax: 
+        document.property_name;
+    document.title; --> will return the title of the document in web page. 
+   There are several document properties and methods.      
+   Window Object: it display the content of the web page 
+   syntax: 
+        window.property_name;
+   it will return the content detailed manner.
