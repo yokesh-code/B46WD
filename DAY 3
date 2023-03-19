@@ -1,0 +1,111 @@
+1. For the given JSON iterate over all loops (for, for in, for of,forEach).
+answer: 
+
+       var json=[{
+    "id":123,
+    "name":"yokesh",
+    "mail":"yokeshsre@gmail.com"
+},
+{
+    "id":234,
+    "name":"srenevas",
+    "mail":"srenevas@gmail.com"
+}];
+//for loop
+for(var i =0;i<json.length;i++)
+{
+    var obj=json[i];
+    console.log(obj.id);
+    console.log(obj.name);
+    console.log(obj.mail);
+}
+//forEach
+json.forEach(function(obj){
+    console.log(obj.mail);
+});
+//for in
+for(var key in json){
+    if(json.hasownproperty(key)){
+        console.log(json[key].name);
+    }
+}
+//for of
+let text="";
+for(let x of json[key].id){
+    text+=x;
+}
+console.log(text);
+
+
+2. Create your own resume data in JSON format.
+    
+    let myResume={
+    "basics": {
+      "name": "YOKESH SRENEVAS R",
+      "email": "yokeshsre@gamil.com",
+      "phone": 9361193936,
+      "degree": "B.TECH",
+      "location": {
+        "address": "Porur",
+        "postalCode": 600001,
+        "city": "Chennai",
+        "state": "Tamilnadu",
+        "country": "India"
+      },
+      "profiles": [
+        {
+          "LINKEDIN": "https://www.linkedin.com/in/yokesh-srenevas-r-0146b7212/",
+          "GITHUB":"https://github.com/yokesh-code"
+        }
+      ]
+    },
+    "education": [
+      {
+        "Institution": "Sri Krishna College of Enginnering and Technology",
+        "Department": "Computer Science",
+        "Batch" :2023,
+        "CGPA": 8.5,
+      }
+    ],
+    "skills": [
+      {
+        "name": "javascript",
+        "level": "begginer"
+      }
+    ],
+    "languages": [
+      {
+        "language": "Tamil,English,Telugu",
+      }
+    ],
+    "interests": [
+      {
+        "name": "playing chess",
+      }
+    ]
+  }
+  console.log(myResume);
+
+3. Read about the difference between window, screen, and document in javascript.
+
+WINDOW OBJECT: 
+    window object has the properties like length, inner Width, inner Height and so on. here this window object consist of exisitng browser context.
+      window.location,
+      window.history,
+      window.screen,
+      window.status,
+      window.document.
+    
+    here window.window always refers to window. as well as might returns the same property of window.object.
+ 
+ DOCUMENT:
+  This HTML documents is a file where it is called as DOM tree, this html file loads in web browser it becomes a documentobject.this object gets into the window object. properties are enhanced to do like link as URL, cookie title etc.. 
+
+SCREEN: 
+  It collects the dimension of the screen object. very small information are gathered. It can be used to display screen width, height, colorDepth, pixelDepth etc.
+    screen.width,
+    screen.height,  
+    screen.availWidth,
+    screen.availHeight,
+    screen.colorDepth,
+    screen.pixelDepth. 
