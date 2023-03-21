@@ -1,0 +1,92 @@
+1. compare two JSON have the same properties without order? 
+let obj1={name:"Person1",age:5}
+let obj2={age:5,name:"Person1"}
+
+
+2. API URL --> rest countries.
+
+  The below lines of code displays all the counrty flags in the console. 
+--------------------------------------------------------------
+flags: 
+
+var xhr=new XMLHttpRequest();
+xhr.open('GET',"https://restcountries.com/v3.1/all")
+xhr.responseType='json';
+xhr.send();
+xhr.onload = function(){
+    var responseObj=xhr.response;
+    for(var i=0;i<responseObj.length;i++)
+    {
+        console.log(responseObj[i].flag)
+    }
+
+}
+--------------------------------------------------------------
+
+3.    print all countries names, regions,sub-regions and populations. 
+
+--------------------------------------------------------------
+names:
+
+var xhr=new XMLHttpRequest();
+xhr.open('GET',"https://restcountries.com/v3.1/all")
+xhr.responseType='json';
+xhr.send();
+xhr.onload = function(){
+    var responseObj=xhr.response;
+        console.log(responseObj)
+
+    for(var i=0;i<responseObj.length;i++)
+    {
+        console.log(responseObj[i].name.common)
+    }
+}
+--------------------------------------------------------------
+subregions:
+
+var xhr=new XMLHttpRequest();
+xhr.open('GET',"https://restcountries.com/v3.1/all")
+xhr.responseType='json';
+xhr.send();
+xhr.onload = function(){
+    var responseObj=xhr.response;
+        // console.log(responseObj)
+
+    for(var i=0;i<responseObj.length;i++)
+    {
+        console.log(responseObj[i].subregion)
+    }
+}
+--------------------------------------------------------------
+regions:
+
+var xhr=new XMLHttpRequest();
+xhr.open('GET',"https://restcountries.com/v3.1/all")
+xhr.responseType='json';
+xhr.send();
+xhr.onload = function(){
+    var responseObj=xhr.response;
+        // console.log(responseObj)
+
+    for(var i=0;i<responseObj.length;i++)
+    {
+        console.log(responseObj[i].region)
+    }
+}
+--------------------------------------------------------------
+Populations:
+
+var xhr=new XMLHttpRequest();
+xhr.open('GET',"https://restcountries.com/v3.1/all")
+xhr.responseType='json';
+xhr.send();
+xhr.onload = function(){
+    var responseObj=xhr.response;
+        // console.log(responseObj)
+
+    for(var i=0;i<responseObj.length;i++)
+    {
+        console.log(responseObj[i].population)
+    }   
+}
+--------------------------------------------------------------
