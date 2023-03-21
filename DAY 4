@@ -1,8 +1,24 @@
 1. compare two JSON have the same properties without order? 
 let obj1={name:"Person1",age:5}
 let obj2={age:5,name:"Person1"}
-
-
+--------------------------------------------------------------
+var user = { name: "Person1", age: 5 };
+var user1 = { age: 5,name: "Person1" };
+function isEqual(user, user1) {
+  var userKeys = Object.keys(user);
+  var user1Keys = Object.keys(user1);
+  if (userKeys.length != user1Keys.length) {
+    return false;
+  }
+  for (var usrKey of userKeys) {
+    if (user[usrKey] != user1[usrKey]) {
+      return false;
+    }
+  }
+  return true;
+}
+console.log(isEqual(user, user1));
+--------------------------------------------------------------
 2. API URL --> rest countries.
 
   The below lines of code displays all the counrty flags in the console. 
