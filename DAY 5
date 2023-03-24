@@ -1,0 +1,26 @@
+1. Do the below programs in anonymous function and IIFE.
+--------------------------------------------------------------------------
+a. print odd numbers in an array. 
+  Anonymous function:
+                  var arr=[1,2,3,4,5,6,7]
+                  let odd=function(oddNum){
+                  for (let i=0;i<arr.length;i++){
+                      if(arr[i]%2!=0)
+                      {
+                          console.log(arr[i]);
+                      }
+                   }
+                   }
+                   odd(arr)
+  Immediately Invoked Function Expression: 
+                  (function(arr){
+                  for (let i=0;i<arr.length;i++){
+                      if(arr[i]%2!=0)
+                      {
+                          console.log(arr[i]);
+                      }
+                  }
+                  }([1,2,3,4,5,6,7]))
+               
+--------------------------------------------------------------------------
+b. Convert all the strings to title caps in a string array. 
