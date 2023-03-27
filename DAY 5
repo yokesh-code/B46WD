@@ -24,3 +24,229 @@ a. print odd numbers in an array.
                
 --------------------------------------------------------------------------
 b. Convert all the strings to title caps in a string array. 
+  Anonymous function:
+	              var caps=function(str) {
+	                  return str.toLowerCase().split(" ").map(function(word) {
+		                      return (word.charAt(0).toUpperCase() + word.slice(1));
+	               }).join("");
+	               }
+	               console.log(caps("yokesh"));
+Immediately Invoked Function Expression:
+
+	              (function(str) {
+	                  return str.toLowerCase().split(" ").map(function(word) {
+		                  return (word.charAt(0).toUpperCase() + word.slice(1));
+	              }).join("");
+	              }(['yokesh']))
+--------------------------------------------------------------------------
+c. Sum of all numbers in an array
+Anonymous function:
+              var arr=[1,2,3];
+              var sum=0;
+              var add=function(){
+                  arr.forEach(arrs=>
+                      sum=sum+arrs
+              )
+              console.log(sum)
+              }
+              add(arr)
+
+Immediately Invoked Function Expression:
+            var sum=0;
+            function(){
+                arr.forEach(arrs=>
+                    sum=sum+arrs
+            )
+            console.log(sum)
+            }([1,2,4])
+--------------------------------------------------------------------------
+d. Return all the prime numbers in an array
+Anonymous function:
+            var isPrime=function (number)
+             { 
+               if (number <= 1)
+               return false;
+
+               if (number <= 3)
+               return true;
+
+               if (number%2 == 0 || number%3 == 0)
+               return false;
+
+               for (var i=5; i*i<=number; i=i+6)
+               {
+                  if (number%i == 0 || number%(i+2) == 0)
+                  return false;
+               }
+
+               return true;
+             }
+             console.log(isPrime(5))
+             
+Immediately Invoked Function Expression:
+            (function(number)
+             { 
+               if (number <= 1)
+               console.log(false);
+               if (number <= 3)
+               console.log(true);
+
+               if (number%2 == 0 || number%3 == 0)
+               console.log(false);
+
+               for (var i=5; i*i<=number; i=i+6)
+               {
+                  if (number%i == 0 || number%(i+2) == 0)
+                  console.log(false);
+               }
+
+                console.log(true);
+             }(5))
+--------------------------------------------------------------------------
+e. Return all the palindromes in an array
+
+Anonymous function:
+            var chkPallindrome=function (str){
+            var len;
+            len=str.length;
+            for(let i=0;i<len/2;i++){
+                if(str[i]!==str[len-1-i])
+                {
+                    return "it is not a pallindrome"
+                }
+                else{
+                    return "it is pallindrome"
+                }
+            }
+            }
+            console.log(chkPallindrome("madem"))
+
+Immediately Invoked Function Expression:
+            (function(str){
+            var len;
+            len=str.length;
+            for(let i=0;i<len/2;i++){
+                if(str[i]!==str[len-1-i])
+                {
+                    console.log("it is not a pallindrome")
+                }
+                else{
+                    console.log("it is pallindrome")
+                }
+            }
+            }("madem"))
+--------------------------------------------------------------------------
+f.Return median of two sorted arrays of the same size.
+--------------------------------------------------------------------------
+g. Remove duplicates from an array
+Anonymous function:
+          let chars = ['A', 'B', 'A', 'C', 'B',1,1,2,3,4,4];
+
+          let duplicate = chars.filter((c, index) => {
+              return chars.indexOf(c) === index;
+          });
+          console.log(duplicate);
+
+Immediately Invoked Function Expression:
+         (function(array){
+                        let dup = [...new Set(array)];
+                        console.log(dup);
+                       })([1,1,2,3,4])
+
+--------------------------------------------------------------------------
+h. Rotate an array by k times
+Anonymous function:
+function(array , k){
+                          k = k % a.length;
+                            if(k < 0){
+                              k += a.length;
+                            }
+
+                            reverse(a, 0, a.length - k - 1);
+                            reverse(a, a.length - k, a.length - 1);
+                            reverse(a, 0, a.length - 1);
+                          }
+                          
+Immediately Invoked Function Expression:
+(function(array , k){
+                          k = k % a.length;
+                            if(k < 0){
+                              k += a.length;
+                            }
+
+                            reverse(a, 0, a.length - k - 1);
+                            reverse(a, a.length - k, a.length - 1);
+                            reverse(a, 0, a.length - 1);
+                          })([1,2,3,4] , 2)
+                          
+--------------------------------------------------------------------------
+Do the below programs in arrow functions.
+a. Print odd numbers in an array
+var arr=[1,2,3,4,5,6,7]
+                  let odd=(oddNum)=>{
+                  for (let i=0;i<arr.length;i++){
+                      if(arr[i]%2!=0)
+                      {
+                          console.log(arr[i]);
+                      }
+                   }
+                   }
+                   odd(arr)
+--------------------------------------------------------------------------
+b. Convert all the strings to title caps in a string array
+var caps=(str) =>{
+	                  return str.toLowerCase().split(" ").map(function(word) {
+		                      return (word.charAt(0).toUpperCase() + word.slice(1));
+	               }).join("");
+	               }
+	               console.log(caps("yokesh"));
+--------------------------------------------------------------------------
+c. Sum of all numbers in an array
+ var arr=[1,2,3];
+              var sum=0;
+              var add=()=>{
+                  arr.forEach(arrs=>
+                      sum=sum+arrs
+              )
+              console.log(sum)
+              }
+              add(arr)
+--------------------------------------------------------------------------
+d. Return all the prime numbers in an array
+var isPrime=(number)=>{ 
+               if (number <= 1)
+               return false;
+
+               if (number <= 3)
+               return true;
+
+               if (number%2 == 0 || number%3 == 0)
+               return false;
+
+               for (var i=5; i*i<=number; i=i+6)
+               {
+                  if (number%i == 0 || number%(i+2) == 0)
+                  return false;
+               }
+
+               return true;
+             }
+             console.log(isPrime(5))
+             
+--------------------------------------------------------------------------
+e. Return all the palindromes in an array
+var chkPallindrome=(str)=>{
+            var len;
+            len=str.length;
+            for(let i=0;i<len/2;i++){
+                if(str[i]!==str[len-1-i])
+                {
+                    return "it is not a pallindrome"
+                }
+                else{
+                    return "it is pallindrome"
+                }
+            }
+            }
+            console.log(chkPallindrome("madem"))
+--------------------------------------------------------------------------
